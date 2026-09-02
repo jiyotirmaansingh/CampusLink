@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status: Waiting to Start"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- ================= STARTUP SCREEN ================= -->
+        <LinearLayout
+            android:id="@+id/startupContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Your Display Name"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btnStudentMode"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="🎓 Enter as Student"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnAdminMode"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="🛡️ Enter as Admin / Faculty"
+                android:textSize="18sp"
+                android:backgroundTint="#B71C1C" />
+        </LinearLayout>
+
+        <!-- ================= ADMIN COMMAND CENTER ================= -->
+        <LinearLayout
+            android:id="@+id/adminContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Admin Command Center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#B71C1C"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnAdminBroadcast"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="📢 Broadcast Notice to Campus"
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Nodes in Mesh:"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/adminDevicesList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+        </LinearLayout>
+
+        <!-- ================= STUDENT DASHBOARD ================= -->
+        <LinearLayout
+            android:id="@+id/studentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- The Notice Board (Admin Broadcasts) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📌 Campus Notice Board"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/noticeBoardList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:minHeight="100dp"
+                android:background="#F0F0F0"
+                android:padding="8dp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- The Peer Zone (Student-to-Student) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👥 Peer Zone (Nearby Students)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap a peer below to establish a direct secure link and share notes:"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Dynamic List for Individual Student Selection -->
+            <LinearLayout
+                android:id="@+id/studentDevicesList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnStudentSend"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Share File with Connected Peers"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
